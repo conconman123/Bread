@@ -5,7 +5,7 @@ function Edit({bread, index}) {
     return (
       <Default>
         <h2>Edit a bread</h2>
-        <form action={`/breads/${index}?_method=PUT`} method='POST'>
+        <form action={`/breads/${bread._id}?_method=PUT`} method='POST'>
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -28,6 +28,15 @@ function Edit({bread, index}) {
             id="hasGluten"
             defaultChecked={bread.hasGluten}
           />
+          <label htmlFor="baker">Baker</label>
+          <select defaultValue={bread.baker} name="baker" id="baker">
+            <option value="Rachel">Rachel</option>
+            <option value="Monica">Monica</option>
+            <option value="Joey">Joey</option>
+            <option value="Chandler">Chandler</option>
+            <option value="Ross">Ross</option>
+            <option value="Phoebe">Phoebe</option>
+          </select>
           <br />
           <input type="submit"/>
         </form>
